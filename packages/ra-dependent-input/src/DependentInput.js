@@ -29,22 +29,14 @@ export const DependentInputComponent = ({
                         style={child.props.style}
                         className={`ra-input-${child.props.source}`}
                     >
-                        <FormField input={child} {...props} />
+                        {child}
                     </div>
                 ))}
             </div>
         );
     }
 
-    return (
-        <div
-            key={children.props.source}
-            style={children.props.style}
-            className={`ra-input-${children.props.source}`}
-        >
-            <FormField input={children} {...props} />
-        </div>
-    );
+    return children;
 };
 
 DependentInputComponent.propTypes = {
